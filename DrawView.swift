@@ -56,6 +56,8 @@ class DrawView: UIView {
                             CGContextAddLineToPoint(context, right.x, right.y)
                             // adds a line
                             CGContextAddLineToPoint(context, left.x, left.y)
+                            // adds a line
+                            CGContextAddLineToPoint(context, top.x, top.y) //closes triangle
                             // fills the shape on the inside
                             CGContextFillPath(context)
                             
@@ -64,6 +66,33 @@ class DrawView: UIView {
                         case .Rectangle :
                         
                             CGContextFillRect(context, rect)
+                            
+                        case .Diamond :
+                            
+//                            
+//                            let midx = CGRectGetMidX(rect)
+//                            let midy = CGRectGetMidY(rect)
+                            
+                            let top = CGPoint(x: width / 2 + start.x, y: start.y)
+                            let right = CGPoint(x: end.x, y: height / 2 + start.y)
+                            let bottom = CGPoint(x: width / 2 + start.x, y: end.y)
+                            let left = CGPoint(x: start.x, y: height / 2 + start.y)
+                            
+                            
+                            //moves cursor to a specific point
+                            CGContextMoveToPoint(context, top.x, top.y)
+                            //adds a line
+                            CGContextAddLineToPoint(context, right.x, right.y)
+                            // adds a line
+                            CGContextAddLineToPoint(context, bottom.x, bottom.y)
+                            // adds a line
+                            CGContextAddLineToPoint(context, left.x, left.y)
+                            // adds a line
+                            CGContextAddLineToPoint(context, top.x, top.y) //closes diamond
+                            // fills the shape on the inside
+                            CGContextFillPath(context)
+                            
+                            
                             
                             
                         }
@@ -205,7 +234,7 @@ class Scribble: Line {
 enum ShapeType {
     
         // creates the allowable shape types
-        case Rectangle, Circle, Triangle
+        case Rectangle, Circle, Triangle, Diamond
     
 }
 // creates a new class for the Shape - "Line" is subclass
