@@ -12,6 +12,7 @@ class ViewController: UIViewController {
     
     
     
+    @IBOutlet weak var toggleButton: ToggleButton!
     //creates outlet for the view
     @IBOutlet weak var controlPanelView: UIView!
     //constraint of the dropdown menu
@@ -21,16 +22,24 @@ class ViewController: UIViewController {
         
         
         //toggles the control of the view when the button is pressed... (I.E. edits the constraints of the view.)
-        self.controlPanelTop.constant = self.controlPanelView.frame.origin.y == 0 ? -200 : 0
+        controlPanelTop.constant = controlPanelView.frame.origin.y == 0 ? -200 : 0
         view.setNeedsUpdateConstraints()
         
-        
+        let degrees: CGFloat = controlPanelView.frame.origin.y == 0 ? 0 : 180
         
         //animates the dropdown window.
         UIView.animateWithDuration(0.8) { () -> Void in
             
             self.view.layoutIfNeeded()
             
+            let degreesToRadians: (CGFloat) -> CGFloat = {
+                return $0 / 180.0 * CGFloat(M_PI)
+                
+            }
+            let t = CGAffineTransformMakeRotation(degreesToRadians(degrees));
+            self.toggleButton.transform = t
+            
+
         }
         
     }
@@ -64,7 +73,8 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+       controlPanelTop.constant = -200
+      
         
     }
     

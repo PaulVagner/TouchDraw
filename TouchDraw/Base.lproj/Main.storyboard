@@ -107,7 +107,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-es-cLT">
-                                                    <rect key="frame" x="8" y="114" width="80" height="30"/>
+                                                    <rect key="frame" x="8" y="134" width="60" height="30"/>
                                                     <animations/>
                                                     <state key="normal" title="Undo"/>
                                                     <connections>
@@ -115,7 +115,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz6-iO-GkD">
-                                                    <rect key="frame" x="232" y="114" width="80" height="30"/>
+                                                    <rect key="frame" x="252" y="134" width="60" height="30"/>
                                                     <animations/>
                                                     <state key="normal" title="Clear"/>
                                                     <connections>
@@ -154,6 +154,22 @@
                                                         <action selector="chooseColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nFs-rj-Krg"/>
                                                     </connections>
                                                 </button>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8M-59-R8u" customClass="TouchSlider" customModule="TouchDraw" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="126" width="320" height="18"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                </view>
                                             </subviews>
                                             <animations/>
                                             <constraints>
@@ -196,7 +212,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="toggleControlPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GV0-bW-ckp"/>
+                                    <action selector="toggleControlPanel:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VBN-gF-RRe"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -215,6 +231,7 @@
                     <connections>
                         <outlet property="controlPanelTop" destination="9v9-GA-L0r" id="qfl-vP-o6u"/>
                         <outlet property="controlPanelView" destination="m4T-1y-y1t" id="3ba-mw-tzD"/>
+                        <outlet property="toggleButton" destination="vFo-lI-LVL" id="wp7-ED-OQf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
