@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		4405526E1BBF065500138DEB /* TouchSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4405526D1BBF065500138DEB /* TouchSlider.swift */; settings = {ASSET_TAGS = (); }; };
+		4408D9F51BC07ACA0067E48F /* FillStrokeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4408D9F41BC07ACA0067E48F /* FillStrokeButton.swift */; settings = {ASSET_TAGS = (); }; };
+		4408D9F91BC2B9EE0067E48F /* line.png in Resources */ = {isa = PBXBuildFile; fileRef = 4408D9F81BC2B9EE0067E48F /* line.png */; settings = {ASSET_TAGS = (); }; };
+		4408DA1F1BC3309D0067E48F /* circle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4408DA1A1BC3309D0067E48F /* circle.png */; settings = {ASSET_TAGS = (); }; };
+		4408DA201BC3309D0067E48F /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = 4408DA1B1BC3309D0067E48F /* diamond.png */; settings = {ASSET_TAGS = (); }; };
+		4408DA211BC3309D0067E48F /* scribble.png in Resources */ = {isa = PBXBuildFile; fileRef = 4408DA1C1BC3309D0067E48F /* scribble.png */; settings = {ASSET_TAGS = (); }; };
+		4408DA221BC3309D0067E48F /* square.png in Resources */ = {isa = PBXBuildFile; fileRef = 4408DA1D1BC3309D0067E48F /* square.png */; settings = {ASSET_TAGS = (); }; };
+		4408DA231BC3309D0067E48F /* triangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 4408DA1E1BC3309D0067E48F /* triangle.png */; settings = {ASSET_TAGS = (); }; };
 		44361D8A1BBD7DEA00C7FC45 /* ToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44361D891BBD7DEA00C7FC45 /* ToggleButton.swift */; settings = {ASSET_TAGS = (); }; };
 		4437160C1BBC18E5007621BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437160B1BBC18E5007621BD /* AppDelegate.swift */; };
 		4437160E1BBC18E5007621BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4437160D1BBC18E5007621BD /* ViewController.swift */; };
@@ -19,6 +26,13 @@
 
 /* Begin PBXFileReference section */
 		4405526D1BBF065500138DEB /* TouchSlider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchSlider.swift; sourceTree = "<group>"; };
+		4408D9F41BC07ACA0067E48F /* FillStrokeButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FillStrokeButton.swift; sourceTree = "<group>"; };
+		4408D9F81BC2B9EE0067E48F /* line.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = line.png; path = ../line.png; sourceTree = "<group>"; };
+		4408DA1A1BC3309D0067E48F /* circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = circle.png; sourceTree = "<group>"; };
+		4408DA1B1BC3309D0067E48F /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
+		4408DA1C1BC3309D0067E48F /* scribble.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = scribble.png; sourceTree = "<group>"; };
+		4408DA1D1BC3309D0067E48F /* square.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = square.png; sourceTree = "<group>"; };
+		4408DA1E1BC3309D0067E48F /* triangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = triangle.png; sourceTree = "<group>"; };
 		44361D891BBD7DEA00C7FC45 /* ToggleButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToggleButton.swift; sourceTree = "<group>"; };
 		443716081BBC18E5007621BD /* TouchDraw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TouchDraw.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4437160B1BBC18E5007621BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,14 +75,21 @@
 			isa = PBXGroup;
 			children = (
 				4437161D1BBC19A3007621BD /* DrawView.swift */,
-				4405526D1BBF065500138DEB /* TouchSlider.swift */,
 				4437160D1BBC18E5007621BD /* ViewController.swift */,
+				4405526D1BBF065500138DEB /* TouchSlider.swift */,
+				44361D891BBD7DEA00C7FC45 /* ToggleButton.swift */,
+				4408D9F41BC07ACA0067E48F /* FillStrokeButton.swift */,
 				4437160B1BBC18E5007621BD /* AppDelegate.swift */,
 				4437160F1BBC18E5007621BD /* Main.storyboard */,
 				443716121BBC18E5007621BD /* Assets.xcassets */,
 				443716141BBC18E5007621BD /* LaunchScreen.storyboard */,
+				4408D9F81BC2B9EE0067E48F /* line.png */,
+				4408DA1A1BC3309D0067E48F /* circle.png */,
+				4408DA1B1BC3309D0067E48F /* diamond.png */,
+				4408DA1C1BC3309D0067E48F /* scribble.png */,
+				4408DA1D1BC3309D0067E48F /* square.png */,
+				4408DA1E1BC3309D0067E48F /* triangle.png */,
 				443716171BBC18E5007621BD /* Info.plist */,
-				44361D891BBD7DEA00C7FC45 /* ToggleButton.swift */,
 			);
 			path = TouchDraw;
 			sourceTree = "<group>";
@@ -130,9 +151,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4408DA201BC3309D0067E48F /* diamond.png in Resources */,
 				443716161BBC18E5007621BD /* LaunchScreen.storyboard in Resources */,
 				443716131BBC18E5007621BD /* Assets.xcassets in Resources */,
+				4408DA1F1BC3309D0067E48F /* circle.png in Resources */,
+				4408DA231BC3309D0067E48F /* triangle.png in Resources */,
 				443716111BBC18E5007621BD /* Main.storyboard in Resources */,
+				4408DA211BC3309D0067E48F /* scribble.png in Resources */,
+				4408DA221BC3309D0067E48F /* square.png in Resources */,
+				4408D9F91BC2B9EE0067E48F /* line.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,6 +174,7 @@
 				4405526E1BBF065500138DEB /* TouchSlider.swift in Sources */,
 				4437160C1BBC18E5007621BD /* AppDelegate.swift in Sources */,
 				4437161E1BBC19A3007621BD /* DrawView.swift in Sources */,
+				4408D9F51BC07ACA0067E48F /* FillStrokeButton.swift in Sources */,
 				44361D8A1BBD7DEA00C7FC45 /* ToggleButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

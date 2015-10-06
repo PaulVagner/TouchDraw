@@ -6,9 +6,12 @@
 //  Copyright © 2015 Paul Vagner. All rights reserved.
 //
 
+// THIS CODE CREATES AND RENDERS THE DROPDOWN/"TOGGLE" BUTTON
 import UIKit
 //renders the button in the main storyboard
-@IBDesignable class ToggleButton: UIButton {
+@IBDesignable
+
+class ToggleButton: UIButton {
     //sets strokeWidth
     @IBInspectable var strokeWidth: CGFloat = 1
     //sets inset of the circle in the square button
@@ -44,7 +47,8 @@ import UIKit
         CGContextStrokePath(context)
         
 //        CGContextFillEllipseInRect(context, rect)
-//        
+//       
+        
         
     }
     

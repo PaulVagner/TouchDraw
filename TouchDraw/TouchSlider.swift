@@ -6,6 +6,8 @@
 //  Copyright © 2015 Paul Vagner. All rights reserved.
 //
 
+//THIS CODE CREATES THE SLIDER
+
 import UIKit
 //renders in storyboard what is coded.
 @IBDesignable
@@ -20,7 +22,7 @@ class TouchSlider: UIView {
     @IBInspectable var  value: CGFloat = 0 {
         //listens to when a value is set on the slider.
         didSet {
-            // forces the slider to stop at the min and max values without going over.
+            // forces the slider to stop at the min and max values without going over as well as displaying ONLY its min and max value
             
             if value < minValue { value = minValue }
             if value > maxValue { value = maxValue }
@@ -67,7 +69,7 @@ class TouchSlider: UIView {
         CGContextFillPath(context)
     }
     
-    
+    //THIS CODE SETS UP THE VISUAL DIMENTIONS OF THE SLIDER HANDLE
     var handleRect: CGRect {
         
         //handleRect
@@ -78,7 +80,7 @@ class TouchSlider: UIView {
         
         
     }
-    // boolion should be named with "is"
+    // boolean should be named with "is"
     var isTouchingHandle = false
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
@@ -93,12 +95,13 @@ class TouchSlider: UIView {
         }
         
     }
-    
+    //THIS COMMAND OVERRIDES THE PREVIOUS SETTING OF THE SLIDER HANDLE ON THE SCREEN ALLOWING IT TO TRAVEL
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         
-        
+        //THIS CODE MEANS WHEN SLIDER HANDLE IS TOUCHED OR MOVED, WHAT SHOULD HAPPEN
         if isTouchingHandle {
             
+            //THIS CODE SETS THE PARAMETERS OF THE MOVEMENT IN REGARDS TO THE SIZE DIMENTIONS OF THE SLIDER HANDLE (SLIDER HANDLE'S CENTER IS OFFSET IN REGARDS TO THE SLIDER VALUES) - (WHEN SLIDER HANDLE IS AT "0" THE SLIDER VALUE IS OFFSET TO ALLOW THE SLIDER HANDLE NOT TO BE LOCATED AT "0")
             if let touch = touches.first {
                 
                 
