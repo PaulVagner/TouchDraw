@@ -141,13 +141,13 @@ class DrawView: UIView {
                             // adds a line
                             CGContextAddLineToPoint(context, top.x, top.y) //closes triangle
                             // fills the shape on the inside
-                            CGContextFillPath(context)
+                            CGContextStrokePath(context)
                             
                             
                             
                         case .Rectangle :
                             
-                            CGContextFillRect(context, rect)
+                            CGContextStrokeRect(context, rect)
                             
                         case .Diamond :
                             
@@ -172,7 +172,7 @@ class DrawView: UIView {
                             // adds a line
                             CGContextAddLineToPoint(context, top.x, top.y) //closes diamond
                             // fills the shape on the inside
-                            CGContextFillPath(context)
+                            CGContextStrokePath(context)
                             
                             
                             
