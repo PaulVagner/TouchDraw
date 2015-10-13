@@ -41,27 +41,27 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             let t = CGAffineTransformMakeRotation(degreesToRadians(degrees));
             self.toggleButton.transform = t
             
-
+            
         }
         
     }
     
     @IBAction func fsButton(sender: fillStrokeButton) {
-    
+        
         colorSource.isFill = !colorSource.isFill
         colorPallete.reloadData()
         
         
-    
+        
     }
     
     
     @IBAction func undo(sender: AnyObject) {
-    
+        
         if(view as? DrawView)?.lines.count > 0 {
-        
-        (view as? DrawView)?.lines.removeLast()
-        
+            
+            (view as? DrawView)?.lines.removeLast()
+            
         }
         
         view.setNeedsDisplay()
@@ -72,10 +72,10 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     
     @IBAction func clear(sender: AnyObject) {
-    
+        
         (view as? DrawView)?.lines = []
-    
-    view.setNeedsDisplay()
+        
+        view.setNeedsDisplay()
         
     }
     
@@ -85,8 +85,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       controlPanelTop.constant = -200
-      
+        controlPanelTop.constant = -200
+        
         
         colorPallete.delegate = self
         colorPallete.dataSource = colorSource
@@ -110,18 +110,18 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     var strokeWidth: CGFloat = 0
     //This code controls the thickness of the stroke using the UISlider
     @IBAction func changeStrokeWidth(sender: UISlider) {
-    
+        
         strokeWidth = CGFloat(sender.value)
-    
+        
     }
     
     var chosenFillColor: UIColor = UIColor.redColor()
     var chosenStrokeColor: UIColor = UIColor.blackColor()
     //THIS FUNCTION SETS UP THE FILLSTROKEBUTTON TO USE THE COLORS FROM THE COLORPALLETE AS THE COLORS OF THE BUTTON DEPENDING ON ITS MODE OF OPERATION (STROKE OR FILL)
-     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-    
-    
-     
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        
+        
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
         
         
@@ -129,7 +129,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
             
             chosenFillColor = cell?.backgroundColor ?? UIColor.redColor()
             fsButton.innerColor = chosenFillColor
-
+            
         } else {
             
             chosenStrokeColor = cell?.backgroundColor ?? UIColor.blackColor()
@@ -164,8 +164,8 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 
             case 2 :
                 startShape(.Circle, withTouch: touch)
-               
-            
+                
+                
             case 3 :
                 startShape(.Rectangle, withTouch: touch)
                 
@@ -195,8 +195,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 //look at View as DrawView if not, then will not crash
                 (view as? DrawView)?.lines.append(newLine)
                 
-                
-                
             }
             
             
@@ -213,11 +211,11 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         let shape = Shape(type: type)
         // sets start location of the shape (top left corner of the shape)
         shape.start = touch.locationInView(view)
-        // sets color of the shape        
+        // sets color of the shape
         shape.strokeColor = chosenStrokeColor
         shape.fillColor = chosenFillColor
         shape.strokeWidth = strokeWidth
-
+        
         
         (view as? DrawView)?.lines.append(shape)
         
@@ -241,8 +239,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 currentLine.end = touch.locationInView(view)
                 
                 view.setNeedsDisplay()
-
-                
             }
             
         }
@@ -250,7 +246,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
 }
 
 class Colors: NSObject, UICollectionViewDataSource {
-   
+    
     let fillColors = [
         
         UIColor.greenColor(),
@@ -272,7 +268,7 @@ class Colors: NSObject, UICollectionViewDataSource {
     ]
     
     let strokeColors = [
-       
+        
         UIColor(red:0.36, green:0.01, blue:0, alpha:1),
         UIColor(red:0.96, green:0.96, blue:0.86, alpha:1),
         UIColor(red:1, green:0.41, blue:0, alpha:1),
@@ -289,8 +285,6 @@ class Colors: NSObject, UICollectionViewDataSource {
         UIColor.cyanColor(),
         UIColor(red:0.96, green:0.73, blue:0.81, alpha:1)
         
-        
-        
     ]
     
     // bulean whether its filled or stroked
@@ -298,16 +292,16 @@ class Colors: NSObject, UICollectionViewDataSource {
     
     // ask for data for collection view
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-      // if it is stroke color use database 1, if fill then database 2
+        // if it is stroke color use database 1, if fill then database 2
         return isFill ? fillColors.count : strokeColors.count
         
         
-         }
+    }
     // runs however many items are stated in the return on previous code of set colors.
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-    let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ColorCell", forIndexPath: indexPath)
-    
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ColorCell", forIndexPath: indexPath)
+        
         cell.backgroundColor = isFill ? fillColors[indexPath.item] : strokeColors[indexPath.item]
         
         
@@ -315,8 +309,8 @@ class Colors: NSObject, UICollectionViewDataSource {
     }
     
 }
-   
-    
+
+
 
 
 
