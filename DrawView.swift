@@ -8,13 +8,14 @@
 
 import UIKit
 
+import QuartzCore
+
 class DrawView: UIView {
     
     
     //array of lines
     var lines = [Line] ()
-    // Only override drawRect: if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
+    
     override func drawRect(rect: CGRect) {
         // Drawing code
     
@@ -68,10 +69,6 @@ class DrawView: UIView {
                             CGContextFillRect(context, rect)
                             
                         case .Diamond :
-                            
-//                            
-//                            let midx = CGRectGetMidX(rect)
-//                            let midy = CGRectGetMidY(rect)
                             
                             let top = CGPoint(x: width / 2 + start.x, y: start.y)
                             let right = CGPoint(x: end.x, y: height / 2 + start.y)
@@ -218,51 +215,6 @@ class DrawView: UIView {
             
         }
         
-        
-        //        //sets color of object - circle
-//        UIColor.magentaColor().set()
-//        //creates filled circle
-//        CGContextFillEllipseInRect(context, CGRect (x: 10, y: 10, width: 200, height: 100))
-//        //sets color of object - square
-//        UIColor.blueColor().set()
-//        //creates outlined square
-//        CGContextStrokeRect(context, CGRect (x: 200, y: 10, width: 100, height: 100))
-//        
-//        //creates the object - circle
-//        CGContextAddEllipseInRect(context, CGRect(x: 100, y: 100, width: 200, height: 200))
-//        //sets the color of the object
-//        UIColor.cyanColor().set()
-//        //fills the object with color chosen
-//        CGContextFillPath(context)
-//        // creates the opject - circle
-//        CGContextAddEllipseInRect(context, CGRect(x: 20, y: 20, width: 200, height: 200))
-//        //fills the object with color chosen
-//        CGContextFillPath(context)
-//        //sets color of the object
-//        UIColor.magentaColor().set()
-//        // creates the opject - circle
-//        CGContextAddEllipseInRect(context, CGRect(x: 50, y: 50, width: 200, height: 200))
-//        //fills the object with color chosen
-//        CGContextFillPath(context)
-//
-        
-//          sets color of the object
-//        UIColor.blueColor().set()
-//       
-//        moves the cursor to a new location
-//       CGContextMoveToPoint(context,20, 20)
-//        
-//    adds a line to the drawing starting at point
-//        CGContextAddLineToPoint(context, 100, 100)
-//        lifts pencil and repositions to new location at point
-//       CGContextMoveToPoint(context, 200, 200)
-//        adds a line to the drawing starting at point
-//        CGContextAddLineToPoint(context, 200, 100)
-//        fills the stroke
-//        CGContextStrokePath(context)
-//
-//    
-    
         
         UIColor.blueColor()
         

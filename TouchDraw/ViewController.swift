@@ -5,6 +5,7 @@
 
 
 import UIKit
+import Foundation
 
 class ViewController: UIViewController, UICollectionViewDelegate {
     
@@ -109,9 +110,9 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     
     var strokeWidth: CGFloat = 0
     //This code controls the thickness of the stroke using the UISlider
-    @IBAction func changeStrokeWidth(sender: UISlider) {
+    @IBAction func changeStrokeWidth(sender: TouchSlider) {
         
-        strokeWidth = CGFloat(sender.value)
+        strokeWidth = CGFloat(sender.value * 10)
         
     }
     

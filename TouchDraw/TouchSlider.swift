@@ -10,8 +10,7 @@
 
 import UIKit
 //renders in storyboard what is coded.
-@IBDesignable
-class TouchSlider: UIView {
+@IBDesignable class TouchSlider: UIControl {
     // sets the color of the slider bar (just the bar, not the handle)
     @IBInspectable var barColor: UIColor = UIColor.purpleColor()
     // renders the color of the slider handle (just the handle, not the bar)
@@ -115,7 +114,7 @@ class TouchSlider: UIView {
                 
                 value = percent * maxValue
                 
-                
+                sendActionsForControlEvents(.ValueChanged)
                 
             }
         }
