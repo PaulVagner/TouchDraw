@@ -59,17 +59,6 @@
                                                         <action selector="chooseTool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="EQ7-Yc-9cs"/>
                                                     </connections>
                                                 </button>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbT-Tk-qcz">
-                                                    <rect key="frame" x="8" y="158" width="40" height="40"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="GQQ-Cd-RXc"/>
-                                                        <constraint firstAttribute="height" constant="40" id="NsP-Dn-kNG"/>
-                                                    </constraints>
-                                                    <state key="normal" backgroundImage="line.png"/>
-                                                    <connections>
-                                                        <action selector="chooseTool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sy5-A5-StK"/>
-                                                    </connections>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lf2-es-cLT">
                                                     <rect key="frame" x="8" y="134" width="60" height="30"/>
                                                     <state key="normal" title="Undo"/>
@@ -78,7 +67,7 @@
                                                     </connections>
                                                 </button>
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qz6-iO-GkD">
-                                                    <rect key="frame" x="252" y="134" width="60" height="30"/>
+                                                    <rect key="frame" x="250" y="134" width="60" height="30"/>
                                                     <state key="normal" title="Clear"/>
                                                     <connections>
                                                         <action selector="clear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yy3-Rl-miq"/>
@@ -95,36 +84,6 @@
                                                         <action selector="chooseTool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WC3-sR-qUp"/>
                                                     </connections>
                                                 </button>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8M-59-R8u" customClass="TouchSlider" customModule="TouchDraw" customModuleProvider="target">
-                                                    <rect key="frame" x="0.0" y="119" width="320" height="18"/>
-                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="18" id="BqG-PP-7Za"/>
-                                                        <constraint firstAttribute="height" constant="18" id="Ew8-iI-udu"/>
-                                                        <constraint firstAttribute="width" constant="320" id="f5G-8X-5Fd"/>
-                                                        <constraint firstAttribute="width" constant="320" id="lLH-yg-tGa"/>
-                                                    </constraints>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
-                                                            <real key="value" value="0.5"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
-                                                            <real key="value" value="0.0"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
-                                                            <real key="value" value="1"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                    <variation key="default">
-                                                        <mask key="constraints">
-                                                            <exclude reference="BqG-PP-7Za"/>
-                                                            <exclude reference="lLH-yg-tGa"/>
-                                                        </mask>
-                                                    </variation>
-                                                    <connections>
-                                                        <action selector="changeStrokeWidth:" destination="BYZ-38-t0r" eventType="valueChanged" id="tY4-ON-1vf"/>
-                                                    </connections>
-                                                </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R2C-kB-GrK" customClass="fillStrokeButton" customModule="TouchDraw" customModuleProvider="target">
                                                     <rect key="frame" x="8" y="7" width="40" height="40"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -200,6 +159,47 @@
                                                         </cells>
                                                     </collectionView>
                                                 </tableView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u8M-59-R8u" customClass="TouchSlider" customModule="TouchDraw" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="119" width="320" height="18"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="18" id="BqG-PP-7Za"/>
+                                                        <constraint firstAttribute="height" constant="18" id="Ew8-iI-udu"/>
+                                                        <constraint firstAttribute="width" constant="320" id="f5G-8X-5Fd"/>
+                                                        <constraint firstAttribute="width" constant="320" id="lLH-yg-tGa"/>
+                                                    </constraints>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="value">
+                                                            <real key="value" value="0.5"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="minValue">
+                                                            <real key="value" value="0.0"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="maxValue">
+                                                            <real key="value" value="1"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="BqG-PP-7Za"/>
+                                                            <exclude reference="lLH-yg-tGa"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <connections>
+                                                        <action selector="changeStrokeWidth:" destination="BYZ-38-t0r" eventType="valueChanged" id="tY4-ON-1vf"/>
+                                                    </connections>
+                                                </view>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbT-Tk-qcz">
+                                                    <rect key="frame" x="8" y="158" width="40" height="40"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="40" id="GQQ-Cd-RXc"/>
+                                                        <constraint firstAttribute="height" constant="40" id="NsP-Dn-kNG"/>
+                                                    </constraints>
+                                                    <state key="normal" backgroundImage="line.png"/>
+                                                    <connections>
+                                                        <action selector="chooseTool:" destination="BYZ-38-t0r" eventType="touchUpInside" id="sy5-A5-StK"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
@@ -286,8 +286,7 @@
                             <constraint firstItem="m4T-1y-y1t" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="v2s-QB-IP9"/>
                         </constraints>
                     </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="320" height="568"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="colorPallete" destination="Iqt-p6-R9m" id="Jhz-Rc-eET"/>
                         <outlet property="controlPanelTop" destination="9v9-GA-L0r" id="qfl-vP-o6u"/>
@@ -298,7 +297,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="226"/>
+            <point key="canvasLocation" x="223" y="45"/>
         </scene>
     </scenes>
     <resources>

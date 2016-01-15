@@ -10,9 +10,7 @@ import Foundation
 class ViewController: UIViewController, UICollectionViewDelegate {
     
     @IBOutlet weak var colorPallete: UICollectionView!
-    
     @IBOutlet weak var fsButton: fillStrokeButton!
-    
     //creates the button action outlet
     @IBOutlet weak var toggleButton: ToggleButton!
     //creates outlet for the view
@@ -21,38 +19,28 @@ class ViewController: UIViewController, UICollectionViewDelegate {
     @IBOutlet weak var controlPanelTop: NSLayoutConstraint!
     //button action
     @IBAction func toggleControlPanel(sender: UIButton) {
-        
-        
         //toggles the control of the view when the button is pressed... (I.E. edits the constraints of the view.) and moves the entire view out of the way
         controlPanelTop.constant = controlPanelView.frame.origin.y == 0 ? -200 : 0
         view.setNeedsUpdateConstraints()
-        
         let degrees: CGFloat = controlPanelView.frame.origin.y == 0 ? 0 : 180
-        
         //animates the dropdown window.
         UIView.animateWithDuration(0.5) { () -> Void in
-            
             self.view.layoutIfNeeded()
             //Animates the dropdown window /Toggle button.
             let degreesToRadians: (CGFloat) -> CGFloat = {
                 return $0 / 180.0 * CGFloat(M_PI)
-                
             }
             
             let t = CGAffineTransformMakeRotation(degreesToRadians(degrees));
             self.toggleButton.transform = t
-            
-            
+    
         }
         
     }
     
     @IBAction func fsButton(sender: fillStrokeButton) {
-        
         colorSource.isFill = !colorSource.isFill
         colorPallete.reloadData()
-        
-        
         
     }
     
@@ -69,8 +57,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         
         
     }
-    
-    
     
     @IBAction func clear(sender: AnyObject) {
         
@@ -92,7 +78,7 @@ class ViewController: UIViewController, UICollectionViewDelegate {
         colorPallete.delegate = self
         colorPallete.dataSource = colorSource
         
-        print(colorPallete.dataSource)
+//        print(colorPallete.dataSource)
         
         colorPallete.reloadData()
         
@@ -197,8 +183,6 @@ class ViewController: UIViewController, UICollectionViewDelegate {
                 (view as? DrawView)?.lines.append(newLine)
                 
             }
-            
-            
             
             view.setNeedsDisplay()
         }

@@ -7,11 +7,8 @@
 //
 
 import UIKit
-
 import QuartzCore
-
 class DrawView: UIView {
-    
     
     //array of lines
     var lines = [Line] ()
@@ -147,11 +144,7 @@ class DrawView: UIView {
                             CGContextStrokeRect(context, rect)
                             
                         case .Diamond :
-                            
-                            //
-                            //                            let midx = CGRectGetMidX(rect)
-                            //                            let midy = CGRectGetMidY(rect)
-                            
+                           
                             let top = CGPoint(x: width / 2 + start.x, y: start.y)
                             let right = CGPoint(x: end.x, y: height / 2 + start.y)
                             let bottom = CGPoint(x: width / 2 + start.x, y: end.y)
@@ -172,25 +165,13 @@ class DrawView: UIView {
                             CGContextStrokePath(context)
                             
                             
-                            
-                            
                         }
-                        
                         
                     } else {
                         
-                        
                         //creates start point for line
                         CGContextMoveToPoint(context, start.x, start.y)
-    //                    //creates end poing for the line
-    //                    CGContextAddLineToPoint(context, end.x, end.y)
-    //                    // setting up to draw
-    //                    CGContextStrokePath(context)
-    //
-    //                    if line is Scribble {
-    //
-    //                    }
-                        
+
                         if let scribble = line as? Scribble {
                             
                             CGContextAddLines(context, scribble.points, scribble.points.count)
@@ -198,16 +179,9 @@ class DrawView: UIView {
                         }
                         
                         CGContextAddLineToPoint(context, end.x, end.y)
-                        
-                        
-                        
                         CGContextStrokePath(context)
                         
-                        
                     }
-                    
-                    
-                    
                     
                 }
                 
@@ -215,14 +189,11 @@ class DrawView: UIView {
             
         }
         
-        
         UIColor.blueColor()
         
     }
 
 }
-
-
 
 class Line {
     
@@ -244,13 +215,9 @@ class Scribble: Line {
         
         didSet {
         
-            
             //adds a new point to the previous point as a line.
             start = points.first
             end = points.last
-            
-            
-            
             
         }
         
@@ -271,7 +238,6 @@ class Shape: Line{
     init(type: ShapeType) {
       //
         self.type = type
-        
         
     }
     

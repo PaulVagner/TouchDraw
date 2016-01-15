@@ -30,10 +30,6 @@ class ToggleButton: UIButton {
         
         CGContextStrokeEllipseInRect(context, insetRect)
         
-//        print(circleInset)
-//        print(center)
-//        print(rect)
-        
         let midX = CGRectGetMidX(rect)
         let midY = CGRectGetMidY(rect)
         
@@ -45,10 +41,7 @@ class ToggleButton: UIButton {
         CGContextAddLineToPoint(context, rect.width - circleInset - 10, midY - 4)
         
         CGContextStrokePath(context)
-        
-//        CGContextFillEllipseInRect(context, rect)
-//       
-        
+
         
     }
     
